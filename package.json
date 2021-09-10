@@ -1,0 +1,16 @@
+{
+  "name": "parsercpp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "build": "g++ main.cpp -I./lib/ -I./data -L./lib/ -L./data -l:libcore.so -l:datacenter.so -Wl,-rpath=./lib -o app",
+     "prebuild": "prepare.sh",
+     "postbuild":  "mv ./lib/*.so ./data/*.so .",
+     "clean": "rm -rf ./lib/*.o ./lib/*.so"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
